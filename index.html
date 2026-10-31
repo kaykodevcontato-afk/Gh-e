@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff0f7" />
+  <meta name="description" content="Um cantinho carinhoso e engraçado com as frases mais famosas dela." />
+  <title>As frases dela 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient--a" aria-hidden="true"></div>
+  <div class="ambient ambient--b" aria-hidden="true"></div>
+  <div class="floating-decor decor-a" aria-hidden="true">♡</div>
+  <div class="floating-decor decor-b" aria-hidden="true">✳</div>
+  <div class="floating-decor decor-c" aria-hidden="true">✦</div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-icon" aria-hidden="true">♥</span>
+        <span>o mundinho <b>dela.</b></span>
+      </a>
+      <span class="header-tag"><span class="tag-dot" aria-hidden="true"></span> feito com muito amor</span>
+    </header>
+
+    <main id="inicio">
+      <section class="intro" aria-labelledby="title">
+        <div class="eyebrow"><span aria-hidden="true">✧</span> UMA COLEÇÃO MUITO ESPECIAL <span aria-hidden="true">✧</span></div>
+        <h1 id="title">As frases mais <span>icônicas</span><br class="desktop-only" /> da minha menina<span class="heart-mark" aria-hidden="true">♥</span></h1>
+        <p>Ela fala uma coisinha… e eu já sei exatamente a carinha que vem junto. <b>Toque na figurinha</b> e descubra a próxima pérola! 🥹</p>
+      </section>
+
+      <section class="play-box" aria-label="Figurinhas e frases interativas">
+        <div class="play-topbar">
+          <div class="topbar-label"><span class="live-dot" aria-hidden="true"></span> MODO FIGURINHA <span class="topbar-heart" aria-hidden="true">♡</span></div>
+          <div class="topbar-actions">
+            <span class="step-counter" id="stepCounter">01 / 08</span>
+            <button class="icon-button" id="soundButton" type="button" title="Ouvir a frase" aria-label="Ouvir a frase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/></svg></button>
+            <button class="icon-button" id="randomButton" type="button" title="Escolher uma frase aleatória" aria-label="Escolher uma frase aleatória"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3h4v4M3 17l7-7M14 10l7-7M3 7l4 4M14 14l7 7M17 21h4v-4"/></svg></button>
+          </div>
+        </div>
+
+        <div class="stage stage--terrivel" id="stage">
+          <div class="stage-pattern" aria-hidden="true"></div>
+          <div class="stage-star star-one" aria-hidden="true">✦</div>
+          <div class="stage-star star-two" aria-hidden="true">✧</div>
+          <div class="stage-star star-three" aria-hidden="true">✳</div>
+          <div class="stage-halo" aria-hidden="true"></div>
+          <div class="stage-bubble" id="speechBubble" role="status" aria-live="polite">
+            <span class="bubble-overline" id="bubbleOverline">ELA DISSE…</span>
+            <span class="bubble-text" id="bubbleText">Que terrível!</span>
+            <span class="bubble-emoji" id="bubbleEmoji" aria-hidden="true">😱</span>
+          </div>
+          <button id="stickerButton" class="sticker-button" type="button" aria-label="Clique na figurinha para ver a próxima frase">
+            <img src="assets/original-que-terrivel.webp" alt="Figurinha ilustrada dela reagindo" id="stickerImage" draggable="false" />
+            <span class="sticker-tap" aria-hidden="true"><span>TOCA EM MIM!</span> <span>👆</span></span>
+          </button>
+          <div class="emotion-label" id="emotionLabel"><span id="emotionEmoji" aria-hidden="true">😱</span> DRAMA TOTAL</div>
+          <div class="burst burst-left" id="burstLeft" aria-hidden="true">💔</div>
+          <div class="burst burst-right" id="burstRight" aria-hidden="true">💥</div>
+          <div class="heart-particles" id="heartParticles" aria-hidden="true"></div>
+        </div>
+
+        <div class="play-footer">
+          <div class="play-info"><span class="play-info-icon" id="playInfoIcon" aria-hidden="true">💗</span><div><strong id="playTitle">Ai, que terrível!</strong><span id="playHint">A atriz principal desse drama é ela.</span></div></div>
+          <button id="nextButton" class="next-btn" type="button">Próxima frase <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="phrases-section" aria-labelledby="phrasesTitle">
+        <div class="section-heading"><div><div class="eyebrow eyebrow-small">A COLEÇÃO COMPLETA</div><h2 id="phrasesTitle">O repertório <span>dela</span> ✨</h2><p>Escolha uma frase ou vá clicando na figurinha.</p></div><div class="stickers-pill">8 frases • ∞ risadas</div></div>
+        <div class="phrase-grid" id="phraseGrid"></div>
+      </section>
+
+      <section class="love-note" aria-label="Surpresa especial">
+        <div class="note-doodle" aria-hidden="true">♡</div>
+        <div><span class="note-kicker">PSIU… TEM UM SEGREDO!</span><h2>A melhor frase dela?</h2><p>Essa eu ainda vou deixar ela descobrir… 💌</p></div>
+        <button class="secret-btn" id="secretButton" type="button">Abrir cartinha <span aria-hidden="true">♡</span></button>
+      </section>
+    </main>
+
+    <footer><span>Feito com carinho, risadas e um tantinho de implicância. <span aria-hidden="true">♥</span></span><span>De alguém que ama até os “oxe” dela.</span></footer>
+  </div>
+
+  <dialog class="secret-dialog" id="secretDialog" aria-labelledby="letterTitle">
+    <button class="close-dialog" id="closeDialog" type="button" aria-label="Fechar cartinha">×</button>
+    <div class="letter-icon" aria-hidden="true">💌</div>
+    <div class="eyebrow eyebrow-small">UMA CARTINHA SÓ PRA VOCÊ</div>
+    <h2 id="letterTitle">Entre todas as frases, <em>a minha favorita é você.</em></h2>
+    <p>Eu adoro cada “oxe”, cada “ave maria”, cada risadinha de “errou, hihihi!”. Até o seu “vou me embora” fica fofo quando vem de você. Criei esse cantinho porque as suas manias são uma das minhas partes favoritas do mundo. 💗</p>
+    <div class="letter-signature">Com todo o meu carinho. ♡</div>
+    <button class="letter-ok" id="letterOk" type="button">Aww, que fofinho! 🥹</button>
+  </dialog>
+</body>
+</html>
