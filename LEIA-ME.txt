@@ -1,35 +1,23 @@
-PROJETO: AS FRASES DELA 💗
-
-Conteúdo:
-- index.html (página)
-- style.css (visual, cores e animações)
-- script.js (frases e reações)
-- assets/ (figurinhas PNG)
+AS FRASES MAIS ICÔNICAS DA MINHA NAMORADA 💗
 
 COMO ABRIR
-1. Extraia o arquivo ZIP.
-2. Abra index.html no Google Chrome, Edge ou outro navegador.
-3. Clique na figurinha ou no botão "Próxima frase".
-4. Experimente os 8 botões, o ícone para ouvir as frases e a cartinha secreta.
+1. Extraia o ZIP.
+2. Abra index.html no navegador.
+3. Clique na personagem para mudar de frase, ou escolha uma imagem no catálogo.
+
+ARQUIVOS
+- index.html: conteúdo
+- style.css: aparência e responsividade
+- script.js: interações, frases e animações
+- assets/: oito figurinhas, uma por frase
 
 COMO PUBLICAR NO GITHUB PAGES
-1. Crie um repositório público (ex.: frases-dela).
-2. Envie index.html, style.css, script.js e a pasta assets para a RAIZ do repositório.
-3. Em Settings > Pages > Build and deployment, selecione "Deploy from a branch".
-4. Escolha branch main, pasta /(root) e clique em Save.
-5. Após a publicação, use o link no formato https://SEU-USUARIO.github.io/frases-dela/
+1. Crie um repositório público (se quiser publicar o site).
+2. Envie index.html, style.css, script.js e a pasta assets.
+3. Em Settings → Pages → Deploy from a branch, selecione main e / (root).
+4. Abra o endereço do Pages quando a publicação estiver pronta.
 
-COMO TROCAR FIGURINHAS
-Salve novos PNGs na pasta assets/ e, dentro de script.js, no início,
-modifique o campo "imagem" da frase desejada para o novo arquivo.
-Exemplo: imagem: 'assets/oxe-nova.webp'
-
-ATENÇÃO SOBRE AS ARTES
-Foram usadas as duas figurinhas disponíveis (a enviada e a criada com
-"Que terrível!"). As outras versões usam variações de cor da figurinha
-original, com efeitos animados específicos para cada frase. Para expressões
-faciais ou roupas realmente diferentes, substitua os PNGs correspondentes
-por novas figurinhas no futuro; toda a interação já está funcionando.
-
-DICA: A leitura das frases usa a voz disponível no próprio navegador.
-Sem uma voz pt-BR instalada, o funcionamento pode variar.
+NOTAS
+A voz usa o recurso de leitura de texto do navegador, não uma gravação real da namorada.
+As imagens incluem o balão de fala desenhado; por isso, evitamos duplicar o balão em HTML.
+Se desejar trocar uma figurinha, salve uma nova imagem em assets/ e atualize o campo imagem no script.js.

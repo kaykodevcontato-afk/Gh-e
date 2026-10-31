@@ -4,11 +4,11 @@
  * e altere o campo "imagem" da frase correspondente.
  */
 const falas = [
-  { texto: 'Que terrível!', icone:'😱', imagem:'assets/original-que-terrivel.webp', estilo:'terrivel', reacao:'DRAMA TOTAL', extra:'💔', extra2:'💥', titulo:'Ai, que terrível!', descricao:'A atriz principal desse drama é ela.' },
+  { texto: 'Que terrível!', icone:'😱', imagem:'assets/que-terrivel.webp', estilo:'terrivel', reacao:'DRAMA TOTAL', extra:'💔', extra2:'💥', titulo:'Ai, que terrível!', descricao:'A atriz principal desse drama é ela.' },
   { texto: 'E como vai ser isso?', icone:'🤔', imagem:'assets/como-vai-ser-isso.webp', estilo:'duvida', reacao:'MIL PERGUNTAS', extra:'❔', extra2:'💭', titulo:'A pergunta do milhão', descricao:'Eu explico, e lá vem outra pergunta. 😅' },
-  { texto: 'Que mistério é esse?', icone:'🕵️‍♀️', imagem:'assets/misterio.webp', estilo:'misterio', reacao:'MODO DETETIVE', extra:'🔎', extra2:'❓', titulo:'Investigação iniciada', descricao:'Até Sherlock Holmes ficaria curioso.' },
+  { texto: 'Que mistério é esse?', icone:'🕵️‍♀️', imagem:'assets/que-misterio-e-esse.webp', estilo:'misterio', reacao:'MODO DETETIVE', extra:'🔎', extra2:'❓', titulo:'Investigação iniciada', descricao:'Até Sherlock Holmes ficaria curioso.' },
   { texto: 'Oxe!', icone:'😳', imagem:'assets/oxe.webp', estilo:'oxe', reacao:'OXENTE!', extra:'⚡', extra2:'😯', titulo:'O clássico do Nordeste', descricao:'Uma palavrinha, mil significados!' },
-  { texto: 'Ave Maria!', icone:'🙏', imagem:'assets/original-ave-maria.webp', estilo:'ave', reacao:'MEU DEUS!', extra:'✨', extra2:'😮', titulo:'O famoso “Ave Maria”', descricao:'A reação oficial de tudo que acontece.' },
+  { texto: 'Ave Maria!', icone:'🙏', imagem:'assets/ave-maria.webp', estilo:'ave', reacao:'MEU DEUS!', extra:'✨', extra2:'😮', titulo:'O famoso “Ave Maria”', descricao:'A reação oficial de tudo que acontece.' },
   { texto: 'Vou me embora!', icone:'🏃‍♀️', imagem:'assets/vou-me-embora.webp', estilo:'tchau', reacao:'SAINDO DE CENA', extra:'💨', extra2:'🚪', titulo:'Ela ameaçou ir embora', descricao:'Mas eu já tô sentindo saudade. 🥹' },
   { texto: 'Errou, hihihi!', icone:'🤭', imagem:'assets/errou-hihihi.webp', estilo:'errou', reacao:'RISADINHA MALIGNA', extra:'😂', extra2:'✨', titulo:'A risadinha da vitória', descricao:'Ela errou? Nunca! Quem erra sou eu.' },
   { texto: 'Te peguei!', icone:'😏', imagem:'assets/te-peguei.webp', estilo:'peguei', reacao:'PEGADINHA!', extra:'🎯', extra2:'💗', titulo:'Caí direitinho!', descricao:'Ela já tá rindo antes de contar.' },
@@ -36,14 +36,16 @@ function construirCartoes() {
     botao.className = 'phrase-card';
     botao.setAttribute('aria-pressed', indice === 0 ? 'true' : 'false');
     botao.setAttribute('aria-label', `Ver reação: ${fala.texto}`);
-    const emoji = document.createElement('span');
-    emoji.className = 'phrase-emoji';
-    emoji.textContent = fala.icone;
-    emoji.setAttribute('aria-hidden','true');
+    const mini = document.createElement('img');
+    mini.className = 'phrase-mini';
+    mini.src = fala.imagem;
+    mini.alt = '';
+    mini.loading = 'eager';
+    mini.decoding = 'async';
     const texto = document.createElement('span');
     texto.className = 'phrase-name';
     texto.textContent = fala.texto;
-    botao.append(emoji, texto);
+    botao.append(mini, texto);
     botao.addEventListener('click', () => mudarFrase(indice));
     el.list.appendChild(botao);
   });
@@ -74,7 +76,7 @@ function mudarFrase(indice) {
   // Reinicia a animação de entrada sem reconstruir os elementos.
   void el.stage.offsetWidth;
   el.image.src = f.imagem;
-  el.image.alt = `Figurinha da namorada: ${f.texto}`;
+  el.image.alt = `Figurinha ilustrada da namorada dizendo: ${f.texto}`;
   el.bubbleText.textContent = f.texto;
   el.bubbleEmoji.textContent = f.icone;
   el.step.textContent = `${String(indice + 1).padStart(2, '0')} / ${String(falas.length).padStart(2, '0')}`;
